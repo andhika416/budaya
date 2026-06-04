@@ -9,6 +9,7 @@ $routes->get('/halaman_utama', 'Halamanutama::index');
 $routes->get('/landing_home', 'Home::landingHome');
 $routes->get('/home', 'Home::index');
 $routes->get('/lembaga', 'Lembaga::index');
+$routes->get('/berita', 'Kabar::index');
 $routes->get('/kabar', 'Kabar::index');
 
 $routes->get('/profil', 'Profil::index');

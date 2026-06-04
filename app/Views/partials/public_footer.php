@@ -32,12 +32,9 @@
     .site-footer__logo-wrap {
         width: 72px;
         height: 72px;
-        border-radius: 18px;
-        background: rgba(255, 255, 255, 0.1);
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
     }
 
     .site-footer__logo {
@@ -168,7 +165,6 @@
         .site-footer__logo-wrap {
             width: 60px;
             height: 60px;
-            border-radius: 16px;
         }
 
         .site-footer__logo {
@@ -207,7 +203,7 @@
     <div class="site-footer__inner">
         <div class="site-footer__brand">
             <div class="site-footer__logo-wrap">
-                <img src="<?= base_url('images/logo.png') ?>" alt="Logo RW" class="site-footer__logo">
+                <img src="<?= base_url('images/Surabaya_Logo.png') ?>" alt="Logo Surabaya" class="site-footer__logo">
             </div>
             <div>
                 <h3 class="site-footer__title">Rungkut Kidul RW.01</h3>
@@ -220,7 +216,8 @@
         <div class="site-footer__column">
             <h4 class="site-footer__heading">Navigasi</h4>
             <a href="<?= base_url('home') ?>" class="site-footer__link">Beranda</a>
-            <a href="<?= base_url('wargaku') ?>" class="site-footer__link">WargaKu</a>
+            <a href="<?= base_url('berita') ?>" class="site-footer__link">Berita Warga</a>
+            <a href="<?= base_url('wargaku') ?>" class="site-footer__link">Pelayanan</a>
             <a href="<?= base_url('surat') ?>" class="site-footer__link">Layanan Surat</a>
         </div>
 

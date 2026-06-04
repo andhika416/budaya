@@ -321,6 +321,8 @@
                 </div>
             </div>
 
+            <a href="<?= base_url('berita') ?>" class="site-navbar__link <?= $activePage === 'berita' ? 'is-active' : '' ?>">Berita</a>
+
             <a href="<?= base_url('wargaku') ?>" class="site-navbar__link <?= $activePage === 'wargaku' ? 'is-active' : '' ?>">Pelayanan</a>
 
             <div class="site-navbar__dropdown site-navbar__dropdown--account">
