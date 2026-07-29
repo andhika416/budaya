@@ -9,10 +9,7 @@
     <link rel="shortcut icon" type="image/png" href="/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Bootstrap CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- STYLES -->
@@ -314,14 +311,7 @@
             font-weight: bold;
             font-size: 25px;
         }
-
-        .card {
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-        }
-
-        .profile-pic {
+.profile-pic {
             width: 120px;
             height: 120px;
             border-radius: 50%;
@@ -371,13 +361,9 @@
             margin-bottom: 20px;
             font-weight: bold;
         }
-
-        .form-control[readonly] {
-            background-color: #f0f2f5;
-            border: none;
-        }
+</style>
     </style>
-    </style>
+    <?= view('partials/tailwind_head') ?>
 </head>
 
 
@@ -394,38 +380,38 @@
             <div class="profile-header">Profile Anda</div>
 
             <div class="mb-3">
-                <label for="nik" class="form-label">NIK</label>
-                <input type="text" class="form-control" id="nik" value="<?= esc($nik) ?>" readonly>
+                <label for="nik" class="mb-1.5 block text-sm font-medium text-slate-700">NIK</label>
+                <input type="text" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" id="nik" value="<?= esc($nik) ?>" readonly>
             </div>
 
             <div class="mb-3">
-                <label for="nama" class="form-label">Nama Lengkap</label>
-                <input type="text" class="form-control" id="nama" value="<?= esc($nama) ?>" readonly>
+                <label for="nama" class="mb-1.5 block text-sm font-medium text-slate-700">Nama Lengkap</label>
+                <input type="text" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" id="nama" value="<?= esc($nama) ?>" readonly>
             </div>
 
 
             <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" value="<?= esc($username) ?>" readonly>
+                <label for="username" class="mb-1.5 block text-sm font-medium text-slate-700">Username</label>
+                <input type="text" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" id="username" value="<?= esc($username) ?>" readonly>
             </div>
 
             <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <div class="input-group">
-                    <input type="password" class="form-control" id="password" value="<?= esc($password) ?>" readonly>
-                    <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                <label for="password" class="mb-1.5 block text-sm font-medium text-slate-700">Password</label>
+                <div class="flex w-full items-stretch gap-2">
+                    <input type="password" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" id="password" value="<?= esc($password) ?>" readonly>
+                    <button class="inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold leading-none shadow-sm transition hover:-translate-y-0.5 focus:outline-none focus:ring-4 disabled:cursor-not-allowed disabled:opacity-50 border border-slate-500 bg-white text-slate-600 hover:bg-slate-600 hover:text-white focus:ring-slate-200" type="button" id="togglePassword">
                         <i class="fa fa-eye" id="eyeIcon"></i>
                     </button>
                 </div>
             </div>
 
             <div class="mb-3">
-                <label for="telepon" class="form-label">Telepon</label>
-                <input type="text" class="form-control" id="telepon" value="<?= esc($telepon) ?>" readonly>
+                <label for="telepon" class="mb-1.5 block text-sm font-medium text-slate-700">Telepon</label>
+                <input type="text" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" id="telepon" value="<?= esc($telepon) ?>" readonly>
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Preview Foto KTP</label><br>
+                <label class="mb-1.5 block text-sm font-medium text-slate-700">Preview Foto KTP</label><br>
                 <img id="ktpPreview" src="<?= base_url('uploads/ktp/' . $foto_ktp) ?>" 
      alt="Preview Foto KTP" class="img-thumbnail" style="max-width: 300px;">
 

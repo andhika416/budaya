@@ -173,12 +173,7 @@
             margin: 0;
             padding: 20px;
         }
-
-        .container {
-            text-align: center;
-        }
-
-        h1 {
+h1 {
             font-size: 20px;
             margin-top: 75px;
             color: #333;
@@ -195,33 +190,11 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 10px;
         }
-
-        .card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            text-align: center;
-            height: 150px;
-            width: 300px;
-            margin-left: 40px;
-            margin-top: 40px;
-        }
-
-        .card:active {
-            filter: brightness(0.7);
-        }
-
-        .card:hover {
+.card:hover {
             filter: brightness(0.9);
             /* Membuat elemen lebih gelap */
         }
-
-        .card:active {
-            filter: brightness(0.7);
-        }
-
-        .card:hover {
+.card:hover {
             transform: scale(1.05);
             /* Membuat elemen lebih gelap */
         }
@@ -566,29 +539,23 @@
 </head>
 
 <body>
-    <!-- Your body content goes here -->
-</body>
-
-</html>
-
-<body>
 
     <?= view('partials/public_navbar', ['activePage' => 'kartar']) ?>
-    <div class="container">
+    <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <h1>Karang Taruna</h1>
         <h2>Periode Aktif 2022–2027</h2>
         <div class="grid">
-            <div class="card">
+            <div class="rounded-xl border border-slate-200 bg-white shadow-soft">
                 <div class="image">👤</div>
                 <div class="name">Andhika Firjatullah</div>
                 <div class="position">Jabatan</div>
             </div>
-            <div class="card">
+            <div class="rounded-xl border border-slate-200 bg-white shadow-soft">
                 <div class="image">👤</div>
                 <div class="name">Andhika Firjatullah</div>
                 <div class="position">Jabatan</div>
             </div>
-            <div class="card">
+            <div class="rounded-xl border border-slate-200 bg-white shadow-soft">
                 <div class="image">
                     <div class="image">
                     <img src="<?= base_url('images/logo.png') ?>" alt="" style="width: 130px; height: 130px; object-fit: cover; border-radius: 50%;">
@@ -597,7 +564,7 @@
                 <div class="name">Andhika Firjatullah</div>
                 <div class="position">Jabatan</div>
             </div>
-            <div class="card">
+            <div class="rounded-xl border border-slate-200 bg-white shadow-soft">
                 <div class="image">
                     <div class="image">
                     <img src="<?= base_url('images/logo.png') ?>" alt="" style="width: 130px; height: 130px; object-fit: cover; border-radius: 50%;">
@@ -606,27 +573,27 @@
                 <div class="name">Andhika Firjatullah</div>
                 <div class="position">Jabatan</div>
             </div>
-            <div class="card">
+            <div class="rounded-xl border border-slate-200 bg-white shadow-soft">
                 <div class="image">👤</div>
                 <div class="name">Andhika Fijtiullah</div>
                 <div class="position">Jabatan</div>
             </div>
-            <div class="card">
+            <div class="rounded-xl border border-slate-200 bg-white shadow-soft">
                 <div class="image">👤</div>
                 <div class="name">Andhika Firjatullah</div>
                 <div class="position">Jabatan</div>
             </div>
-            <div class="card">
+            <div class="rounded-xl border border-slate-200 bg-white shadow-soft">
                 <div class="image">👤</div>
                 <div class="name">Andhika Firjatullah</div>
                 <div class="position">Jabatan</div>
             </div>
-            <div class="card">
+            <div class="rounded-xl border border-slate-200 bg-white shadow-soft">
                 <div class="image">👤</div>
                 <div class="name">Andhika Firjatullah</div>
                 <div class="position">Jabatan</div>
             </div>
-            <div class="card">
+            <div class="rounded-xl border border-slate-200 bg-white shadow-soft">
                 <div class="image">👤</div>
                 <div class="name">Andhika Firjatullah</div>
                 <div class="position">Jabatan</div>
@@ -655,9 +622,10 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const dropdownToggle = document.querySelector('.dropdown-toggle');
-        const dropdownMenu = document.querySelector('.dropdown');
+        const dropdownToggle = document.querySelector('[data-dropdown-toggle]');
+        const dropdownMenu = document.querySelector('[data-dropdown-menu]');
 
+        if (dropdownToggle && dropdownMenu) {
         dropdownToggle.addEventListener('click', function(event) {
             event.preventDefault(); // Mencegah navigasi
             dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';

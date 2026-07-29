@@ -9,10 +9,7 @@
     <link rel="shortcut icon" type="image/png" href="/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Bootstrap CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- STYLES -->
@@ -173,13 +170,7 @@
             margin-bottom: 20px;
             font-weight: bold;
         }
-
-        .form-control[readonly] {
-            background-color: #f0f2f5;
-            border: none;
-        }
-
-        .sidebar {
+.sidebar {
             position: fixed;
             top: 0;
             left: 0;
@@ -202,45 +193,22 @@
         .sidebar a:hover {
             background-color: #016b63;
         }
-
-        .dropdown-toggle::after {
-            float: right;
-            margin-top: 6px;
-        }
-
-        .dropdown-menu {
-            background-color: #017a6c;
-        }
-
-        .dropdown-menu a {
-            color: white !important;
-        }
-
-        .dropdown-menu a:hover {
-            background-color: #016b63 !important;
-        }
-
-        .sidebar img.icon {
+.sidebar img.icon {
             width: 20px;
             height: 20px;
             margin-right: 10px;
         }
     </style>
     </style>
+    <?= view('partials/tailwind_head') ?>
 </head>
-
-<body>
-    <!-- Your body content goes here -->
-</body>
-
-</html>
 
 <body>
 
 
     <?= view('partials/public_navbar', ['activePage' => '']) ?>
-<div class="d-flex">
-    <div class="sidebar col-3 col-md-2">
+<div class="flex">
+    <div class="sidebar col-span-3 md:col-span-2">
         <h5 class="text-center mb-5"></h5>
         <a href="/admin"> <img class="icon" src="https://img.icons8.com/ios-filled/50/ffffff/dashboard.png" /> Dashboard</a>
         <a href="/admin_data"><img class="icon" src="https://img.icons8.com/ios-filled/50/ffffff/groups.png" /> Pendataan Warga</a>
@@ -262,15 +230,15 @@
             <div class="profile-header">Profile Anda</div>
 
              <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" value="<?= esc($username) ?>" readonly>
+                <label for="username" class="mb-1.5 block text-sm font-medium text-slate-700">Username</label>
+                <input type="text" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" id="username" value="<?= esc($username) ?>" readonly>
             </div>
 
             <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <div class="input-group">
-                    <input type="password" class="form-control" id="password" value="<?= esc($password) ?>" readonly>
-                    <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                <label for="password" class="mb-1.5 block text-sm font-medium text-slate-700">Password</label>
+                <div class="flex w-full items-stretch gap-2">
+                    <input type="password" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" id="password" value="<?= esc($password) ?>" readonly>
+                    <button class="inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold leading-none shadow-sm transition hover:-translate-y-0.5 focus:outline-none focus:ring-4 disabled:cursor-not-allowed disabled:opacity-50 border border-slate-500 bg-white text-slate-600 hover:bg-slate-600 hover:text-white focus:ring-slate-200" type="button" id="togglePassword">
                         <i class="fa fa-eye" id="eyeIcon"></i>
                     </button>
                 </div>

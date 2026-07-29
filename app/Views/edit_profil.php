@@ -9,10 +9,7 @@
     <link rel="shortcut icon" type="image/png" href="/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Bootstrap CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- STYLES -->
@@ -314,14 +311,7 @@
             font-weight: bold;
             font-size: 25px;
         }
-
-        .card {
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-        }
-
-        .profile-pic {
+.profile-pic {
             width: 120px;
             height: 120px;
             border-radius: 50%;
@@ -350,13 +340,8 @@
             font-weight: bold;
         }
     </style>
+    <?= view('partials/tailwind_head') ?>
 </head>
-
-<body>
-    <!-- Your body content goes here -->
-</body>
-
-</html>
 
 <body>
 
@@ -367,9 +352,9 @@
     <!-- CONTENT START -->
     <section>
 
-        <!-- .container start -->
-        <div class="container mt-5 mb-5">
-            <div class="row justify-content-center">
+        <!-- content start -->
+        <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 mt-5 mb-5">
+            <div class="grid gap-4 md:grid-cols-12 justify-center">
                 <div class="col-lg-8">
                     <div class="shadow border rounded p-5">
                         <h2 class="mb-4 text-center">Edit Profil</h2>
@@ -379,40 +364,40 @@
 
                             <!-- Nama Lengkap -->
                             <div class="mb-3">
-                                <label for="nama" class="form-label">Nama Lengkap</label>
-                                <input type="text" class="form-control" id="nama" name="nama" required>
+                                <label for="nama" class="mb-1.5 block text-sm font-medium text-slate-700">Nama Lengkap</label>
+                                <input type="text" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" id="nama" name="nama" required>
                             </div>
 
                             <!-- Foto Profil -->
                             <div class="mb-3">
-                                <label for="foto" class="form-label">Foto Profil</label>
-                                <input class="form-control" type="file" id="foto" name="foto" accept="image/*">
+                                <label for="foto" class="mb-1.5 block text-sm font-medium text-slate-700">Foto Profil</label>
+                                <input class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" type="file" id="foto" name="foto" accept="image/*">
                             </div>
                             <div class="mb-3">
-                                <label for="website" class="form-label">NIK</label>
-                                <input type="url" class="form-control" id="website" name="website">
+                                <label for="website" class="mb-1.5 block text-sm font-medium text-slate-700">NIK</label>
+                                <input type="url" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" id="website" name="website">
                             </div>
                             <!-- Alamat -->
                             <div class="mb-3">
-                                <label for="alamat" class="form-label">Alamat</label>
-                                <textarea class="form-control" id="alamat" name="alamat" rows="3" required></textarea>
+                                <label for="alamat" class="mb-1.5 block text-sm font-medium text-slate-700">Alamat</label>
+                                <textarea class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" id="alamat" name="alamat" rows="3" required></textarea>
                             </div>
 
                             <!-- Email -->
                             <div class="mb-3">
-                                <label for="email" class="form-label">Alamat Email</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
+                                <label for="email" class="mb-1.5 block text-sm font-medium text-slate-700">Alamat Email</label>
+                                <input type="email" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" id="email" name="email" required>
                             </div>
 
                             <!-- Nomor Telepon -->
                             <div class="mb-3">
-                                <label for="telepon" class="form-label">Nomor Telepon</label>
-                                <input type="text" class="form-control" id="telepon" name="telepon" required>
+                                <label for="telepon" class="mb-1.5 block text-sm font-medium text-slate-700">Nomor Telepon</label>
+                                <input type="text" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" id="telepon" name="telepon" required>
                             </div>
 
                             <!-- Tombol Simpan -->
-                            <div class="d-grid mt-4">
-                                <button type="submit" class="btn btn-success">Simpan Perubahan</button>
+                            <div class="grid mt-4">
+                                <button type="submit" class="inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold leading-none shadow-sm transition hover:-translate-y-0.5 focus:outline-none focus:ring-4 disabled:cursor-not-allowed disabled:opacity-50 bg-emerald-600 text-white hover:bg-emerald-700 focus:ring-emerald-200">Simpan Perubahan</button>
                             </div>
                         </form>
 
@@ -421,7 +406,7 @@
             </div>
         </div>
 
-        <!-- .container end -->
+        <!-- content end -->
 
     </section>
     <!-- CONTENT END -->
@@ -446,7 +431,7 @@
 
 
 </html>
-< href="#" class="link-warning text-decoration-none fw-bold ms-2 mr-900">
+< href="#" class="link-warning text-decoration-none font-bold ml-2 mr-900">
     <i class="fa-solid fa-sign-out"></i>
     Keluar
     </a

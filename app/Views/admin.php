@@ -10,9 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
@@ -196,25 +194,7 @@
         .sidebar a:hover {
             background-color: #016b63;
         }
-
-        .dropdown-toggle::after {
-            float: right;
-            margin-top: 6px;
-        }
-
-        .dropdown-menu {
-            background-color: #017a6c;
-        }
-
-        .dropdown-menu a {
-            color: white !important;
-        }
-
-        .dropdown-menu a:hover {
-            background-color: #016b63 !important;
-        }
-
-        .sidebar img.icon {
+.sidebar img.icon {
             width: 20px;
             height: 20px;
             margin-right: 10px;
@@ -232,20 +212,15 @@
             /* Changed to Poppins */
         }
     </style>
+    <?= view('partials/tailwind_head') ?>
 </head>
-
-<body>
-    <!-- Your body content goes here -->
-</body>
-
-</html>
 
 <body>
 
 
     <?= view('partials/public_navbar', ['activePage' => '']) ?>
-<div class="d-flex">
-    <div class="sidebar col-3 col-md-2">
+<div class="flex">
+    <div class="sidebar col-span-3 md:col-span-2">
         <h5 class="text-center mb-5"></h5>
         <a href="/admin"> <img class="icon" src="https://img.icons8.com/ios-filled/50/ffffff/dashboard.png" /> Dashboard</a>
         <a href="/admin_data"><img class="icon" src="https://img.icons8.com/ios-filled/50/ffffff/groups.png" /> Pendataan Warga</a>
@@ -260,24 +235,24 @@
     <h1>Selamat Datang di Admin E-Rukun Warga</h1>
 </div>
 <div class="dashboard-container">
-    <div class="card card-warga-pindah">
-        <div class="card-value" id="warga-pindah"><?= $wargaPindah ?></div>
-        <div class="card-title">Warga Pindah</div>
+    <div class="rounded-xl border border-slate-200 bg-white shadow-soft card-warga-pindah">
+        <div class="text-4xl font-bold text-rw-green" id="warga-pindah"><?= $wargaPindah ?></div>
+        <div class="text-sm font-semibold text-slate-600">Warga Pindah</div>
     </div>
 
-    <div class="card card-warga-tinggal">
-        <div class="card-value" id="warga-tinggal"><?= $wargaTinggal ?></div>
-        <div class="card-title">Warga Tinggal</div>
+    <div class="rounded-xl border border-slate-200 bg-white shadow-soft card-warga-tinggal">
+        <div class="text-4xl font-bold text-rw-green" id="warga-tinggal"><?= $wargaTinggal ?></div>
+        <div class="text-sm font-semibold text-slate-600">Warga Tinggal</div>
     </div>
 
-    <div class="card card-laporan">
-        <div class="card-value" id="laporan-warga"><?= $laporanWarga ?></div>
-        <div class="card-title">Laporan Warga</div>
+    <div class="rounded-xl border border-slate-200 bg-white shadow-soft card-laporan">
+        <div class="text-4xl font-bold text-rw-green" id="laporan-warga"><?= $laporanWarga ?></div>
+        <div class="text-sm font-semibold text-slate-600">Laporan Warga</div>
     </div>
 
-    <div class="card card-surat">
-        <div class="card-value" id="surat-pengantar"><?= $suratPengantar ?></div>
-        <div class="card-title">Surat Pengantar</div>
+    <div class="rounded-xl border border-slate-200 bg-white shadow-soft card-surat">
+        <div class="text-4xl font-bold text-rw-green" id="surat-pengantar"><?= $suratPengantar ?></div>
+        <div class="text-sm font-semibold text-slate-600">Surat Pengantar</div>
     </div>
 </div>
 </div>
@@ -317,22 +292,7 @@
         margin-left: 275px;
         margin-top: 30px;
     }
-
-    .card {
-        background-color: white;
-        border-radius: 8px;
-        padding: 18px;
-        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        transition: all 0.2s ease;
-    }
-
-    .card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 5px 8px rgba(0, 0, 0, 0.15);
-    }
-
-    .card-value {
+.card-value {
         font-size: 28px;
         font-weight: bold;
         margin: 12px 0 8px;
@@ -346,14 +306,7 @@
         margin-bottom: 5px;
         font-weight: 500;
     }
-
-    .card small {
-        font-size: 12px;
-        color: #95a5a6;
-        display: block;
-    }
-
-    .card-warga-pindah {
+.card-warga-pindah {
         border-top: 3px solid #e74c3c;
     }
 
@@ -374,12 +327,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 10px;
         }
-
-        .card {
-            padding: 15px 10px;
-        }
-
-        .card-value {
+.card-value {
             font-size: 24px;
         }
     }

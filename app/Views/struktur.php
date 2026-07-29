@@ -1,679 +1,187 @@
+<?php
+$officials = [
+    [
+        'name' => 'Andhika Firjatullah',
+        'role' => 'Ketua RW.01',
+        'scope' => 'Koordinasi lingkungan dan pelayanan warga',
+        'photo' => base_url('images/Foto_Andhika_Firjatullah.jpg'),
+    ],
+    [
+        'name' => 'Andhika Firjatullah',
+        'role' => 'Sekretaris RW',
+        'scope' => 'Administrasi, surat menyurat, dan data warga',
+        'photo' => null,
+    ],
+    [
+        'name' => 'Andhika Firjatullah',
+        'role' => 'Bendahara RW',
+        'scope' => 'Iuran, rekap kas, dan laporan keuangan',
+        'photo' => null,
+    ],
+    [
+        'name' => 'Andhika Firjatullah',
+        'role' => 'Ketua RT 01',
+        'scope' => 'Pelayanan dan koordinasi warga RT 01',
+        'photo' => null,
+    ],
+    [
+        'name' => 'Andhika Firjatullah',
+        'role' => 'Ketua RT 02',
+        'scope' => 'Pelayanan dan koordinasi warga RT 02',
+        'photo' => null,
+    ],
+    [
+        'name' => 'Andhika Firjatullah',
+        'role' => 'Ketua RT 03',
+        'scope' => 'Pelayanan dan koordinasi warga RT 03',
+        'photo' => null,
+    ],
+    [
+        'name' => 'Andhika Firjatullah',
+        'role' => 'Ketua RT 04',
+        'scope' => 'Pelayanan dan koordinasi warga RT 04',
+        'photo' => null,
+    ],
+    [
+        'name' => 'Andhika Firjatullah',
+        'role' => 'Ketua RT 05',
+        'scope' => 'Pelayanan dan koordinasi warga RT 05',
+        'photo' => null,
+    ],
+    [
+        'name' => 'Andhika Firjatullah',
+        'role' => 'Ketua RT 06',
+        'scope' => 'Pelayanan dan koordinasi warga RT 06',
+        'photo' => null,
+    ],
+];
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
-    <title>RW</title>
-    <meta name="description" content="The small framework with powerful features">
+    <title>Perangkat RT/RW | Sistem Informasi RW</title>
+    <meta name="description" content="Struktur perangkat RT/RW Rungkut Kidul RW.01">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="/favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-    <!-- STYLES -->
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        rw: {
+                            green: '#0a3323',
+                            ink: '#16302b',
+                            muted: '#5f726b',
+                            orange: '#f4a340',
+                            soft: '#f4f7f2',
+                        },
+                    },
+                    boxShadow: {
+                        soft: '0 18px 42px rgba(10, 51, 35, 0.10)',
+                    },
+                },
+            },
+        };
+    </script>
     <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html,
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
             max-width: 100%;
             overflow-x: hidden;
-        }
-
-        .logo {
-            position: absolute;
-            top: 50%;
-            left: 14px;
-            transform: translateY(-50%);
-            width: 42px;
-            height: 42px;
-            z-index: 1000;
-            max-width: 100%;
-            object-fit: contain;
-            background: rgba(255, 255, 255, 0.14);
-            border-radius: 12px;
-            padding: 4px;
-        }
-
-        .judul1 {
-            position: absolute;
-            top: 8px;
-            left: 68px;
-            z-index: 1001;
-        }
-
-        .judul1 h1 {
-            margin: 0;
-            font-size: 15px;
-            line-height: 1.05;
-            color: white;
-        }
-
-        .judul2 {
-            position: absolute;
-            top: 25px;
-            left: 68px;
-            z-index: 1001;
-        }
-
-        .judul2 h2 {
-            font-weight: 500;
-            margin: 0;
-            font-size: 10px;
-            line-height: 1.1;
-            color: white;
-        }
-
-        nav {
-            background-color: #0a3323;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 40px;
-            font-family: 'Poppins', sans-serif;
-            max-width: 100%;
-            transition: border-bottom 0.3s ease;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-
-        }
-
-        .navbar-nav {
-            display: flex;
-            justify-content: flex-end;
-            width: 100%;
-        }
-
-        .menu {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .menu>li {
-            position: relative;
-            display: inline-block;
-            padding-bottom: 8px;
-            margin-bottom: -8px;
-        }
-
-        .menu a {
-            text-decoration: none;
-            padding: 15px;
-            display: block;
-        }
-
-        .dropdown {
-            display: none;
-            position: absolute;
-            top: calc(100% - 2px);
-            left: 0;
-            min-width: 220px;
-            padding: 8px;
-            border-radius: 14px;
-            background-color: #0a3323;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
-
-        .menu>li:hover .dropdown,
-        .menu>li:focus-within .dropdown {
-            display: block;
-        }
-
-        .dropdown li {
-            display: block;
-            /* Tampilkan item dropdown dalam baris */
-        }
-
-        .dropdown a {
-            padding: 10px 12px;
-            border-radius: 10px;
-            white-space: nowrap;
-        }
-
-        .dropdown a:hover {
-            background-color: rgba(255, 255, 255, 0.12);
-        }
-
-        .menu {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: flex-end;
-            width: 100%;
-        }
-
-        .menu li {
-            margin-left: 5px;
-        }
-
-        .menu li a {
-            color: white;
-            text-decoration: none;
-            font-size: 15px;
-            padding-right: 50px;
-        }
-
-        .menu a:hover {
-            font-weight: bold;
-            color: #E27602;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .container {
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 20px;
-            margin-top: 75px;
-            color: #333;
-        }
-
-        h2 {
-            font-size: 12px;
-            color: #666;
-            margin: 10px 0 30px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-        }
-
-        .card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            text-align: center;
-            height: 150px;
-            width: 300px;
-            margin-left: 40px;
-            margin-top: 40px;
-        }
-
-        .card:active {
-            filter: brightness(0.7);
-        }
-
-        .card:hover {
-            filter: brightness(0.9);
-            /* Membuat elemen lebih gelap */
-        }
-
-        .card:active {
-            filter: brightness(0.7);
-        }
-
-        .card:hover {
-            transform: scale(1.05);
-            /* Membuat elemen lebih gelap */
-        }
-
-        .image {
-            background-color: #FFFFFF;
-            border-radius: 50%;
-            height: 100px;
-            width: 100px;
-            margin: 0 auto 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .name {
-            font-weight: bold;
-            margin-bottom: 2px;
-        }
-
-        .position {
-            color: #0a3323;
-        }
-
-        footer {
-            background-color: #0a3323;
-            margin-top: 150px;
-            padding-left: 100px;
-            padding-right: 100px;
-            height: 305px;
-            color: white;
-            z-index: 1000;
-        }
-
-        footer a {
-            color: white;
-            text-decoration: none;
-        }
-
-        footer .logo-footer img {
-            position: absolute;
-            width: 100px;
-            margin-top: 40px;
-            margin-left: 20px;
-        }
-
-        footer .tentang-footer {
-            position: absolute;
-            padding: 2rem 1.75rem;
-            width: 560px;
-            font-size: 15px;
-            margin-top: 130px;
-        }
-
-        footer .tentang-footer p.komunitas-pecinta-kucing {
-            position: absolute;
-            font-weight: bold;
-            font-size: 20px;
-            margin-top: -30px;
-        }
-
-        footer .kontak {
-            position: absolute;
-            margin-top: 100px;
-            margin-left: 660px;
-            font-size: 15px;
-            font-weight: bold;
-        }
-
-        footer .kontak1 {
-            position: absolute;
-            margin-top: 135px;
-            margin-left: 660px;
-            font-size: 15px;
-            text-decoration: none;
-        }
-
-        footer .kontak2 {
-            position: absolute;
-            margin-top: 170px;
-            margin-left: 660px;
-            font-size: 15px;
-            text-decoration: none;
-        }
-
-        footer .sosialmedia {
-            position: absolute;
-            margin-top: 100px;
-            margin-left: 920px;
-            font-size: 15px;
-            font-weight: bold;
-        }
-
-        footer .sosialmedia1 {
-            position: absolute;
-            margin-top: 135px;
-            margin-left: 920px;
-            font-size: 15px;
-            text-decoration: none;
-            color: white;
-        }
-
-        footer .sosialmedia2 {
-            position: absolute;
-            margin-top: 170px;
-            margin-left: 920px;
-            font-size: 15px;
-            text-decoration: none;
-            color: white;
-        }
-
-        footer .sosialmedia3 {
-            position: absolute;
-            margin-top: 205px;
-            margin-left: 920px;
-            font-size: 15px;
-            text-decoration: none;
-            color: white;
-        }
-
-        .image-container {
-            width: 1263px;
-            height: 550px;
-            position: relative;
-        }
-
-        .image-container img {
-            width: 100%;
-            height: 106%;
-            object-fit: cover;
-        }
-
-        .text-over-image3 {
-            position: absolute;
-            top: 40%;
-            left: 375px;
-            right: 30%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            font-size: 10px;
-            padding: 10px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .text-over-image2 {
-            position: absolute;
-            top: 27%;
-            left: 375px;
-            right: 30%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 25px;
-            font-weight: bold;
-            padding: 10px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .text-over-image {
-            position: absolute;
-            top: 20%;
-            left: 20%;
-            transform: translate(-50%, -50%);
-            color: white;
-            padding: 10px;
-            font-weight: bold;
-            font-size: 25px;
-        }
-
-        .box2 {
-            position: relative;
-            width: 240px;
-            height: 350px;
-            background: #FFFFFF;
-            border: 3px solid #0a3323;
-            border-radius: 10px;
-            background-position: center;
-            transition: filter 0.5s;
-            margin-top: 70px;
-            margin-left: 75px;
-            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        }
-
-        .box2 p {
-            position: absolute;
-            color: #000000;
-            margin-left: 30px;
-            margin-top: 130px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .box2:active {
-            filter: brightness(0.7);
-        }
-
-        .box2:hover {
-            filter: brightness(0.9);
-            /* Membuat elemen lebih gelap */
-        }
-
-        .box2:active {
-            filter: brightness(0.7);
-        }
-
-        .box2:hover {
-            transform: scale(1.05);
-            /* Membuat elemen lebih gelap */
-        }
-
-        .box3 {
-            position: relative;
-            width: 240px;
-            height: 350px;
-            background: #FFFFFF;
-            border: 3px solid #0a3323;
-            border-radius: 10px;
-            background-position: center;
-            transition: filter 0.5s;
-            margin-top: -355px;
-            margin-left: 360px;
-            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        }
-
-        .box3 p {
-            position: absolute;
-            color: #000000;
-            margin-left: 30px;
-            margin-top: 130px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .box3:active {
-            filter: brightness(0.7);
-        }
-
-        .box3:hover {
-            filter: brightness(0.9);
-            /* Membuat elemen lebih gelap */
-        }
-
-        .box3:active {
-            filter: brightness(0.7);
-        }
-
-        .box3:hover {
-            transform: scale(1.05);
-            /* Membuat elemen lebih gelap */
-        }
-
-        .box4 {
-            position: relative;
-            width: 240px;
-            height: 350px;
-            background: #FFFFFF;
-            border: 3px solid #0a3323;
-            border-radius: 10px;
-            background-position: center;
-            transition: filter 0.5s;
-            margin-top: -355px;
-            margin-left: 645px;
-            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        }
-
-        .box4 p {
-            position: absolute;
-            color: #000000;
-            margin-left: 30px;
-            margin-top: 130px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .box4:active {
-            filter: brightness(0.7);
-        }
-
-        .box4:hover {
-            filter: brightness(0.9);
-            /* Membuat elemen lebih gelap */
-        }
-
-        .box4:active {
-            filter: brightness(0.7);
-        }
-
-        .box4:hover {
-            transform: scale(1.05);
-            /* Membuat elemen lebih gelap */
-        }
-
-        .box5 {
-            position: relative;
-            width: 240px;
-            height: 350px;
-            background: #FFFFFF;
-            border: 3px solid #0a3323;
-            border-radius: 10px;
-            background-position: center;
-            transition: filter 0.5s;
-            margin-top: -355px;
-            margin-left: 935px;
-            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        }
-
-        .box5 p {
-            position: absolute;
-            color: #000000;
-            margin-left: 30px;
-            margin-top: 130px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .box5:active {
-            filter: brightness(0.7);
-        }
-
-        .box5:hover {
-            filter: brightness(0.9);
-            /* Membuat elemen lebih gelap */
-        }
-
-        .box5:active {
-            filter: brightness(0.7);
-        }
-
-        .box5:hover {
-            transform: scale(1.05);
-            /* Membuat elemen lebih gelap */
-        }
-    </style>
-
-    <style {csp-style-nonce}>
-        * {
-            transition: background-color 300ms ease, color 300ms ease;
-            font-family: 'Poppins', sans-serif;
-            /* Changed to Poppins */
+            scroll-behavior: smooth;
         }
     </style>
 </head>
 
-<body>
-    <!-- Your body content goes here -->
-</body>
-
-</html>
-
-<body>
-
+<body class="min-h-screen bg-[#f5f7f4] font-sans text-rw-ink antialiased">
     <?= view('partials/public_navbar', ['activePage' => 'struktur']) ?>
-    <div class="container">
-        <h1>Perangkat RT/RW</h1>
-        <h2>Periode Aktif 2022–2027</h2>
-        <div class="grid">
-            <div class="card">
-                <div class="image">👤</div>
-                <div class="name">Andhika Firjatullah</div>
-                <div class="position">Jabatan</div>
-            </div>
-            <div class="card">
-                <div class="image">👤</div>
-                <div class="name">Andhika Firjatullah</div>
-                <div class="position">Jabatan</div>
-            </div>
-            <div class="card">
-                <div class="image">
-                    <div class="image">
-                    <img src="<?= base_url('images/logo.png') ?>" alt="" style="width: 130px; height: 130px; object-fit: cover; border-radius: 50%;">
+
+    <main>
+        <section class="bg-[radial-gradient(circle_at_top_left,rgba(10,51,35,0.12),transparent_28%),linear-gradient(180deg,#ffffff_0%,#f5f7f4_100%)]">
+            <div class="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-10 lg:py-16">
+                <div class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+                    <div>
+                        <span class="inline-flex items-center gap-2 rounded-full bg-rw-green/10 px-4 py-2 text-xs font-semibold text-rw-green">
+                            <i class="fas fa-sitemap"></i>
+                            Struktur Lembaga
+                        </span>
+                        <h1 class="mt-5 text-3xl font-extrabold leading-tight text-rw-ink sm:text-4xl lg:text-5xl">Perangkat RT/RW</h1>
+                        <p class="mt-4 max-w-2xl text-sm leading-7 text-rw-muted sm:text-base">
+                            Daftar pengurus aktif Rungkut Kidul RW.01 periode 2022-2027 untuk membantu warga mengenali alur koordinasi dan pelayanan lingkungan.
+                        </p>
+                    </div>
+
+                    <div class="grid gap-4 rounded-[28px] border border-rw-green/10 bg-white/80 p-5 shadow-soft backdrop-blur sm:grid-cols-3">
+                        <div class="rounded-2xl bg-rw-green px-4 py-5 text-white">
+                            <div class="text-3xl font-extrabold">01</div>
+                            <div class="mt-1 text-xs font-medium text-white/80">RW Aktif</div>
+                        </div>
+                        <div class="rounded-2xl bg-rw-orange/15 px-4 py-5 text-rw-ink">
+                            <div class="text-3xl font-extrabold">06</div>
+                            <div class="mt-1 text-xs font-medium text-rw-muted">Wilayah RT</div>
+                        </div>
+                        <div class="rounded-2xl bg-rw-green/10 px-4 py-5 text-rw-ink">
+                            <div class="text-3xl font-extrabold">2027</div>
+                            <div class="mt-1 text-xs font-medium text-rw-muted">Akhir Periode</div>
+                        </div>
                     </div>
                 </div>
-                <div class="name">Andhika Firjatullah</div>
-                <div class="position">Jabatan</div>
             </div>
-            <div class="card">
-                <div class="image">
-                    <div class="image">
-                    <img src="<?= base_url('images/logo.png') ?>" alt="" style="width: 130px; height: 130px; object-fit: cover; border-radius: 50%;">
-                    </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-5 pb-4 sm:px-8 lg:px-10">
+            <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                    <span class="text-sm font-semibold text-rw-green">Pengurus aktif</span>
+                    <h2 class="mt-1 text-2xl font-bold text-rw-ink">Koordinasi RT/RW Rungkut Kidul</h2>
                 </div>
-                <div class="name">Andhika Firjatullah</div>
-                <div class="position">Jabatan</div>
+                <a href="<?= base_url('wargaku') ?>" class="inline-flex items-center justify-center gap-2 rounded-full bg-rw-green px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-950/10 transition hover:-translate-y-0.5 hover:bg-[#124431] focus:outline-none focus:ring-4 focus:ring-rw-green/20">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    Buka Pelayanan
+                </a>
             </div>
-            <div class="card">
-                <div class="image">👤</div>
-                <div class="name">Andhika Fijtiullah</div>
-                <div class="position">Jabatan</div>
+
+            <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                <?php foreach ($officials as $official): ?>
+                    <article class="group min-w-0 rounded-[24px] border border-rw-green/10 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-soft">
+                        <div class="flex items-start gap-4">
+                            <?php if ($official['photo']): ?>
+                                <img src="<?= esc($official['photo']) ?>" alt="Foto <?= esc($official['name']) ?>" class="h-20 w-20 shrink-0 rounded-2xl object-cover ring-4 ring-rw-green/10">
+                            <?php else: ?>
+                                <div class="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-rw-green/10 text-3xl text-rw-green ring-4 ring-rw-green/5">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                            <?php endif; ?>
+
+                            <div class="min-w-0">
+                                <h3 class="break-words text-lg font-bold leading-snug text-rw-ink"><?= esc($official['name']) ?></h3>
+                                <p class="mt-1 inline-flex rounded-full bg-rw-orange/15 px-3 py-1 text-xs font-semibold text-rw-green"><?= esc($official['role']) ?></p>
+                            </div>
+                        </div>
+                        <p class="mt-5 text-sm leading-7 text-rw-muted"><?= esc($official['scope']) ?></p>
+                    </article>
+                <?php endforeach; ?>
             </div>
-            <div class="card">
-                <div class="image">👤</div>
-                <div class="name">Andhika Firjatullah</div>
-                <div class="position">Jabatan</div>
-            </div>
-            <div class="card">
-                <div class="image">👤</div>
-                <div class="name">Andhika Firjatullah</div>
-                <div class="position">Jabatan</div>
-            </div>
-            <div class="card">
-                <div class="image">👤</div>
-                <div class="name">Andhika Firjatullah</div>
-                <div class="position">Jabatan</div>
-            </div>
-            <div class="card">
-                <div class="image">👤</div>
-                <div class="name">Andhika Firjatullah</div>
-                <div class="position">Jabatan</div>
-            </div>
-        </div>
-    </div>
+        </section>
+    </main>
 
-</body>
-
-
-</header>
-
-<!-- CONTENT -->
-
-
-
-<!-- FOOTER: DEBUG INFO + COPYRIGHTS -->
-
-
-<!-- SCRIPTS -->
-
-
-
-<!-- -->
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const dropdownToggle = document.querySelector('.dropdown-toggle');
-        const dropdownMenu = document.querySelector('.dropdown');
-
-        dropdownToggle.addEventListener('click', function(event) {
-            event.preventDefault(); // Mencegah navigasi
-            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-        });
-
-        // Menutup dropdown jika klik di luar
-        window.addEventListener('click', function(event) {
-            if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
-                dropdownMenu.style.display = 'none';
-            }
-        });
-    });
-</script>
-<?= view('partials/public_footer') ?>
+    <?= view('partials/public_footer') ?>
 </body>
 
 </html>
-
-
-

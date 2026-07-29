@@ -30,7 +30,7 @@ $errorId = uniqid('error', true);
             CodeIgniter: <?= esc(CodeIgniter::CI_VERSION) ?> --
             Environment: <?= ENVIRONMENT ?>
         </div>
-        <div class="container">
+        <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
             <h1><?= esc($title), esc($exception->getCode() ? ' #' . $exception->getCode() : '') ?></h1>
             <p>
                 <?= nl2br(esc($exception->getMessage())) ?>
@@ -41,7 +41,7 @@ $errorId = uniqid('error', true);
     </div>
 
     <!-- Source -->
-    <div class="container">
+    <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <p><b><?= esc(clean_path($file)) ?></b> at line <b><?= esc($line) ?></b></p>
 
         <?php if (is_file($file)) : ?>
@@ -51,7 +51,7 @@ $errorId = uniqid('error', true);
         <?php endif; ?>
     </div>
 
-    <div class="container">
+    <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <?php
         $last = $exception;
 
@@ -75,7 +75,7 @@ $errorId = uniqid('error', true);
     </div>
 
     <?php if (defined('SHOW_DEBUG_BACKTRACE') && SHOW_DEBUG_BACKTRACE) : ?>
-    <div class="container">
+    <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 
         <ul class="tabs" id="tabs">
             <li><a href="#backtrace">Backtrace</a></li>
@@ -300,7 +300,7 @@ $errorId = uniqid('error', true);
 
                 <?php if ($empty) : ?>
 
-                    <div class="alert">
+                    <div class="mb-4 rounded-xl border px-4 py-3 text-sm">
                         No $_GET, $_POST, or $_COOKIE Information to show.
                     </div>
 

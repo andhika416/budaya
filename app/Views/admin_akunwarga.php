@@ -10,9 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
@@ -174,13 +172,7 @@
             margin-bottom: 20px;
             font-weight: bold;
         }
-
-        .form-control[readonly] {
-            background-color: #f0f2f5;
-            border: none;
-        }
-
-        .sidebar {
+.sidebar {
             position: fixed;
             top: 0;
             left: 0;
@@ -203,41 +195,12 @@
         .sidebar a:hover {
             background-color: #016b63;
         }
-
-        .dropdown-toggle::after {
-            float: right;
-            margin-top: 6px;
-        }
-
-        .dropdown-menu {
-            background-color: #017a6c;
-        }
-
-        .dropdown-menu a {
-            color: white !important;
-        }
-
-        .dropdown-menu a:hover {
-            background-color: #016b63 !important;
-        }
-
-        .sidebar img.icon {
+.sidebar img.icon {
             width: 20px;
             height: 20px;
             margin-right: 10px;
         }
-
-        .container {
-            margin-top: 50px;
-        }
-
-        .table-responsive {
-            margin-left: 250px;
-            /* Adjust left margin for table */
-
-        }
-
-        table {
+table {
             font-size: 14px;
             /* Set font size for table */
         }
@@ -252,40 +215,7 @@
             font-size: 14px;
             /* Set font size for table header */
         }
-
-        .btn {
-            font-size: 14px;
-            /* Set font size for buttons */
-        }
-
-        .btn-sm {
-            padding: 5px 10px;
-        }
-
-        .table-bordered {
-            border: 1px solid #dee2e6;
-        }
-
-        .table-striped tbody tr:nth-of-type(odd) {
-            background-color: #f9f9f9;
-        }
-
-        .table-success {
-            background-color: #28a745;
-            color: white;
-        }
-
-        .form-control {
-            width: 200px;
-            display: inline-block;
-        }
-
-        .container {
-            margin-top: 40px;
-            margin-left: 200px;
-        }
-
-        .table-wrapper {
+.data-panel {
             background: #fff;
             padding: 25px;
             border-radius: 12px;
@@ -293,27 +223,7 @@
             margin-right: 100px;
             margin-left: 100px;
         }
-
-        .table thead {
-            background-color: #d0ebe6;
-            color: #000;
-        }
-
-        .btn-add {
-            margin-bottom: 20px;
-        }
-
-        .btn-edit {
-            background-color: #007bff;
-            color: #fff;
-        }
-
-        .btn-delete {
-            background-color: #dc3545;
-            color: #fff;
-        }
-
-        .pagination {
+.pagination {
             justify-content: center;
         }
     </style>
@@ -329,14 +239,15 @@
             /* Changed to Poppins */
         }
     </style>
+    <?= view('partials/tailwind_head') ?>
 </head>
 
 <body>
 
 
     <?= view('partials/public_navbar', ['activePage' => '']) ?>
-<div class="d-flex">
-        <div class="sidebar col-3 col-md-2">
+<div class="flex">
+        <div class="sidebar col-span-3 md:col-span-2">
             <h5 class="text-center mb-5"></h5>
             <a href="/admin"> <img class="icon" src="https://img.icons8.com/ios-filled/50/ffffff/dashboard.png" /> Dashboard</a>
             <a href="/admin_data"><img class="icon" src="https://img.icons8.com/ios-filled/50/ffffff/groups.png" /> Pendataan Warga</a>
@@ -347,27 +258,27 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="table-wrapper">
-            <h4 class="fw-bold mb-4">Data Akun Warga</h4>
+    <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="data-panel">
+            <h4 class="font-bold mb-4">Data Akun Warga</h4>
 
             <!-- Filter Inputs -->
-            <div class="row mb-3">
-                <div class="col-md-3 mb-2">
-                    <input type="text" id="filterNIK" class="form-control" placeholder="Filter NIK">
+            <div class="grid gap-4 md:grid-cols-12 mb-3">
+                <div class="md:col-span-3 mb-2">
+                    <input type="text" id="filterNIK" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" placeholder="Filter NIK">
                 </div>
-                <div class="col-md-3 mb-2">
-                    <input type="text" id="filterNama" class="form-control" placeholder="Filter Nama">
+                <div class="md:col-span-3 mb-2">
+                    <input type="text" id="filterNama" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" placeholder="Filter Nama">
                 </div>
-                <div class="d-flex justify-content-start gap-2">
-                    <button class="btn btn-outline-success" onclick="exportExcel()">Export Excel</button>
-                    <button class="btn btn-outline-danger" onclick="exportPDF()">Export PDF</button>
+                <div class="flex justify-start gap-2">
+                    <button class="inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold leading-none shadow-sm transition hover:-translate-y-0.5 focus:outline-none focus:ring-4 disabled:cursor-not-allowed disabled:opacity-50 border border-emerald-700 bg-white text-emerald-700 hover:bg-emerald-700 hover:text-white focus:ring-emerald-200" onclick="exportExcel()">Export Excel</button>
+                    <button class="inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold leading-none shadow-sm transition hover:-translate-y-0.5 focus:outline-none focus:ring-4 disabled:cursor-not-allowed disabled:opacity-50 border border-red-600 bg-white text-red-600 hover:bg-red-600 hover:text-white focus:ring-red-200" onclick="exportPDF()">Export PDF</button>
                 </div>
             </div>
 
             <!-- Table -->
-            <table class="table table-bordered" id="akunTable">
-                <thead class="table-primary">
+            <table class="w-full min-w-max border-collapse text-sm [&_td]:border [&_td]:border-slate-200 [&_td]:px-3 [&_td]:py-2 [&_td]:align-middle [&_th]:border [&_th]:border-slate-200 [&_th]:px-3 [&_th]:py-2 [&_th]:align-middle border border-slate-200" id="akunTable">
+                <thead class="bg-sky-50 text-sky-900">
                     <tr>
                         <th>Nama</th>
                         <th>NIK</th>
@@ -398,7 +309,7 @@
                             <td>
                                 <form action="<?= base_url('admin_akunwarga/delete/' . $user['id_user']) ?>" method="post" onsubmit="return confirm('Yakin ingin menghapus user ini?')">
                                     <?= csrf_field() ?>
-                                    <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                                    <button type="submit" class="inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold leading-none shadow-sm transition hover:-translate-y-0.5 focus:outline-none focus:ring-4 disabled:cursor-not-allowed disabled:opacity-50 min-h-8 rounded-lg px-3 py-1.5 text-xs bg-red-600 text-white hover:bg-red-700 focus:ring-red-200">Hapus</button>
                                 </form>
                             </td>
 
@@ -410,9 +321,9 @@
             </table>
 
             <!-- Pagination -->
-            <div class="d-flex justify-content-between">
-                <button id="prevPage" class="btn btn-secondary btn-sm">Previous</button>
-                <button id="nextPage" class="btn btn-secondary btn-sm">Next</button>
+            <div class="flex justify-between">
+                <button id="prevPage" class="inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold leading-none shadow-sm transition hover:-translate-y-0.5 focus:outline-none focus:ring-4 disabled:cursor-not-allowed disabled:opacity-50 bg-slate-600 text-white hover:bg-slate-700 focus:ring-slate-300 min-h-8 rounded-lg px-3 py-1.5 text-xs">Previous</button>
+                <button id="nextPage" class="inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold leading-none shadow-sm transition hover:-translate-y-0.5 focus:outline-none focus:ring-4 disabled:cursor-not-allowed disabled:opacity-50 bg-slate-600 text-white hover:bg-slate-700 focus:ring-slate-300 min-h-8 rounded-lg px-3 py-1.5 text-xs">Next</button>
             </div>
         </div>
 

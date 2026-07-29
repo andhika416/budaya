@@ -8,6 +8,10 @@ class Login extends BaseController
 {
     public function index()
     {
+        if (session()->get('logged_in')) {
+            return redirect()->to('/home');
+        }
+
         return view('login_user');
     }
 
@@ -40,6 +44,6 @@ class Login extends BaseController
     public function logout()
     {
         session()->destroy();
-        return redirect()->to('/login');
+        return redirect()->to('/home');
     }
 }

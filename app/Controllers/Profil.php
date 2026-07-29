@@ -4,8 +4,12 @@ namespace App\Controllers;
 
 class Profil extends BaseController
 {
-    public function index(): string
+    public function index()
     {
+        if (! session()->get('logged_in')) {
+            return redirect()->to('/login');
+        }
+
         // Ambil data dari session
         $data = [
             'nik'      => session()->get('nik'),

@@ -5,9 +5,10 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/halaman_utama', 'Halamanutama::index');
-$routes->get('/landing_home', 'Home::landingHome');
+$routes->get('/', 'Home::index');
 $routes->get('/home', 'Home::index');
+$routes->get('/landing_home', 'Home::landingHome');
+$routes->get('/halaman_utama', static fn() => redirect()->to('/home'));
 $routes->get('/lembaga', 'Lembaga::index');
 $routes->get('/berita', 'Kabar::index');
 $routes->get('/kabar', 'Kabar::index');
@@ -27,8 +28,7 @@ $routes->get('/login', 'Login::index');
 $routes->get('/logout', 'Login::logout');
 $routes->get('logout_admin', 'Loginadmin::logout');
 
-$routes->get('/', 'Login::index');
-$routes->setDefaultController('Login');
+$routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 
 $routes->get('login', 'Login::index');
@@ -40,10 +40,8 @@ $routes->get('daftar_admin', 'Loginadmin::daftar');
 $routes->post('daftar_admin/submit', 'Loginadmin::register');
 
 
-$routes->get('home', 'Home::index');
 $routes->get('agenda', 'Agenda::index');
 
-$routes->get('/', 'Home::index');
 $routes->get('/surat',       'Surat::index');        // tampilkan form
 $routes->post('/surat/proses', 'Surat::proses');      // proses dan generate PDF
 $routes->post('/cetak_surat', 'Surat::proses');       // alias, jika mau

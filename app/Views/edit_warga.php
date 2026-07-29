@@ -10,9 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
@@ -197,41 +195,12 @@
         .sidebar a:hover {
             background-color: #016b63;
         }
-
-        .dropdown-toggle::after {
-            float: right;
-            margin-top: 6px;
-        }
-
-        .dropdown-menu {
-            background-color: #017a6c;
-        }
-
-        .dropdown-menu a {
-            color: white !important;
-        }
-
-        .dropdown-menu a:hover {
-            background-color: #016b63 !important;
-        }
-
-        .sidebar img.icon {
+.sidebar img.icon {
             width: 20px;
             height: 20px;
             margin-right: 10px;
         }
-
-        .container {
-            margin-top: 50px;
-        }
-
-        .table-responsive {
-            margin-left: 250px;
-            /* Adjust left margin for table */
-
-        }
-
-        table {
+table {
             font-size: 14px;
             /* Set font size for table */
         }
@@ -246,34 +215,7 @@
             font-size: 14px;
             /* Set font size for table header */
         }
-
-        .btn {
-            font-size: 14px;
-            /* Set font size for buttons */
-        }
-
-        .btn-sm {
-            padding: 5px 10px;
-        }
-
-        .table-bordered {
-            border: 1px solid #dee2e6;
-        }
-
-        .table-striped tbody tr:nth-of-type(odd) {
-            background-color: #f9f9f9;
-        }
-
-        .table-success {
-            background-color: #28a745;
-            color: white;
-        }
-
-        .form-control {
-            width: 200px;
-            display: inline-block;
-        }
-    </style>
+</style>
 
     </style>
 
@@ -286,83 +228,84 @@
             /* Changed to Poppins */
         }
     </style>
+    <?= view('partials/tailwind_head') ?>
 </head>
 
 <body>
 
 
     <?= view('partials/public_navbar', ['activePage' => '']) ?>
-<div class="d-flex">
-            <div class="sidebar col-3 col-md-2">
+<div class="flex">
+            <div class="sidebar col-span-3 md:col-span-2">
                 <h5 class="text-center mb-5"></h5>
                 <a href="/admin"> <img class="icon" src="https://img.icons8.com/ios-filled/50/ffffff/dashboard.png" /> Dashboard</a>
                 <a href="/admin_data"><img class="icon" src="https://img.icons8.com/ios-filled/50/ffffff/groups.png" /> Pendataan Warga</a>
                 <a href=""><img class="icon" src="https://img.icons8.com/ios-filled/50/ffffff/document--v1.png" /> Surat Keterangan RT/RW</a>
                 <a href="/admin_iuran"><img class="icon" src="https://img.icons8.com/ios-filled/50/ffffff/money.png" /> Rekap Iuran Sampah</a>
                 <a href="#"><img class="icon" src="https://img.icons8.com/ios-filled/50/ffffff/error.png" /> Laporan Warga</a>
-                <a id="dropdownLembaga" class="dropdown-toggle" href="#" role="button">
+                <a id="dropdownLembaga" class="inline-flex items-center gap-2" href="#" role="button">
                     <img class="icon" src="https://img.icons8.com/ios-filled/50/ffffff/organization.png" /> Lembaga
                 </a>
-                <ul id="menuLembaga" class="dropdown-menu border-0 shadow" style="display: none;">
+                <ul id="menuLembaga" class="mt-2 rounded-xl bg-rw-green/95 p-2 shadow-soft border-0 shadow" style="display: none;">
                     <li>
-                        <a class="dropdown-item" href="#"><img class="icon" src="https://img.icons8.com/ios-filled/24/ffffff/administrator-male.png" /> Perangkat RT/RW</a>
+                        <a class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-white hover:bg-white/10" href="#"><img class="icon" src="https://img.icons8.com/ios-filled/24/ffffff/administrator-male.png" /> Perangkat RT/RW</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="#"><img class="icon" src="https://img.icons8.com/ios-filled/24/ffffff/teamwork.png" /> Karang Taruna</a>
+                        <a class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-white hover:bg-white/10" href="#"><img class="icon" src="https://img.icons8.com/ios-filled/24/ffffff/teamwork.png" /> Karang Taruna</a>
                     </li>
                 </ul>
             </div>
         </div>
 
-        <div class="container mt-5">
+        <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 mt-5">
             <div class="content">
                 <h1>Edit Warga Pindah dan Tinggal</h1>
             </div>
             <!-- Modal Body -->
-            <div class="modal-body">
-                <div class="form-container bg-light rounded p-4">
+            <div class="rounded-2xl bg-white p-5 shadow-soft">
+                <div class="form-container bg-slate-100 rounded p-4">
                     <!-- Form untuk menambah warga -->
                     <form id="formTambahWarga" action="/edit_warga/update/<?= $warga['id'] ?>" method="post">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
-                                <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" value="<?= $warga['nama_lengkap'] ?>" required>
+                        <div class="grid gap-4 md:grid-cols-12 g-3">
+                            <div class="md:col-span-6">
+                                <label for="nama_lengkap" class="mb-1.5 block text-sm font-medium text-slate-700">Nama Lengkap</label>
+                                <input type="text" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" id="nama_lengkap" name="nama_lengkap" value="<?= $warga['nama_lengkap'] ?>" required>
                             </div>
-                            <div class="col-md-6">
-                                <label for="nik" class="form-label">NIK</label>
-                                <input type="text" class="form-control" id="nik" name="nik" value="<?= $warga['nik'] ?>" required>
+                            <div class="md:col-span-6">
+                                <label for="nik" class="mb-1.5 block text-sm font-medium text-slate-700">NIK</label>
+                                <input type="text" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" id="nik" name="nik" value="<?= $warga['nik'] ?>" required>
                             </div>
-                            <div class="col-md-6">
-                                <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
-                                <select class="form-select" id="jenis_kelamin" name="jenis_kelamin" required>
+                            <div class="md:col-span-6">
+                                <label for="jenis_kelamin" class="mb-1.5 block text-sm font-medium text-slate-700">Jenis Kelamin</label>
+                                <select class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" id="jenis_kelamin" name="jenis_kelamin" required>
                                     <option disabled selected>Pilih Jenis Kelamin</option>
                                     <option value="laki-laki" <?= $warga['jenis_kelamin'] === 'laki-laki' ? 'selected' : '' ?>>Laki-laki</option>
                                     <option value="perempuan" <?= $warga['jenis_kelamin'] === 'perempuan' ? 'selected' : '' ?>>Perempuan</option>
                                 </select>
                             </div>
-                            <div class="col-md-6">
-                                <label for="status" class="form-label">Status</label>
-                                <select class="form-select" id="status" name="status" required>
+                            <div class="md:col-span-6">
+                                <label for="status" class="mb-1.5 block text-sm font-medium text-slate-700">Status</label>
+                                <select class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" id="status" name="status" required>
                                     <option disabled selected>Pilih Status</option>
                                     <option value="pindah" <?= $warga['status'] === 'pindah' ? 'selected' : '' ?>>Pindah</option>
                                     <option value="tinggal" <?= $warga['status'] === 'tinggal' ? 'selected' : '' ?>>Tinggal</option>
                                 </select>
                             </div>
-                            <div class="col-md-6">
-                                <label for="alamat_asal" class="form-label">Alamat Asal</label>
-                                <input type="text" class="form-control" id="alamat_asal" name="alamat_asal" value="<?= $warga['alamat_asal'] ?>">
+                            <div class="md:col-span-6">
+                                <label for="alamat_asal" class="mb-1.5 block text-sm font-medium text-slate-700">Alamat Asal</label>
+                                <input type="text" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" id="alamat_asal" name="alamat_asal" value="<?= $warga['alamat_asal'] ?>">
                             </div>
-                            <div class="col-md-6">
-                                <label for="alamat_tujuan" class="form-label">Alamat Tujuan</label>
-                                <input type="text" class="form-control" id="alamat_tujuan" name="alamat_tujuan" value="<?= $warga['alamat_tujuan'] ?>">
+                            <div class="md:col-span-6">
+                                <label for="alamat_tujuan" class="mb-1.5 block text-sm font-medium text-slate-700">Alamat Tujuan</label>
+                                <input type="text" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" id="alamat_tujuan" name="alamat_tujuan" value="<?= $warga['alamat_tujuan'] ?>">
                             </div>
-                            <div class="col-md-6">
-                                <label for="tanggal" class="form-label">Tanggal</label>
-                                <input type="date" class="form-control" id="tanggal" name="tanggal" value="<?= $warga['tanggal'] ?>">
+                            <div class="md:col-span-6">
+                                <label for="tanggal" class="mb-1.5 block text-sm font-medium text-slate-700">Tanggal</label>
+                                <input type="date" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" id="tanggal" name="tanggal" value="<?= $warga['tanggal'] ?>">
                             </div>
-                            <div class="col-12">
-                                <label for="keterangan" class="form-label">Keterangan</label>
-                                <textarea class="form-control" id="keterangan" name="keterangan" rows="3"><?= $warga['keterangan'] ?></textarea>
+                            <div class="col-span-12">
+                                <label for="keterangan" class="mb-1.5 block text-sm font-medium text-slate-700">Keterangan</label>
+                                <textarea class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" id="keterangan" name="keterangan" rows="3"><?= $warga['keterangan'] ?></textarea>
                             </div>
                         </div>
                     </form>
@@ -370,9 +313,9 @@
             </div>
 
             <!-- Modal Footer -->
-            <div class="modal-footer">
-                <a href="/admin_data" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button> </a>
-                <button type="submit" class="btn btn-primary" form="formTambahWarga">Simpan</button>
+            <div class="mt-4 flex flex-wrap items-center justify-end gap-2">
+                <a href="/admin_data" class="inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold leading-none shadow-sm transition hover:-translate-y-0.5 focus:outline-none focus:ring-4 disabled:cursor-not-allowed disabled:opacity-50 bg-slate-600 text-white hover:bg-slate-700 focus:ring-slate-300">Tutup</button> </a>
+                <button type="submit" class="inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold leading-none shadow-sm transition hover:-translate-y-0.5 focus:outline-none focus:ring-4 disabled:cursor-not-allowed disabled:opacity-50 bg-rw-green text-white hover:bg-rw-teal focus:ring-rw-green/20" form="formTambahWarga">Simpan</button>
             </div>
 
             <!-- Tambahkan CSS di bagian atas halaman Anda atau di dalam <style> -->
@@ -383,11 +326,7 @@
                     padding: 20px;
                     margin-left: 250px;
                 }
-
-                .form-label {
-                    font-weight: 500;
-                }
-            </style>
+</style>
 
         </div>
 

@@ -10,9 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
@@ -496,13 +494,8 @@
             /* Changed to Poppins */
         }
     </style>
+    <?= view('partials/tailwind_head') ?>
 </head>
-
-<body>
-    <!-- Your body content goes here -->
-</body>
-
-</html>
 
 <body>
 
@@ -512,47 +505,47 @@
         </main>
 
 
-        <div class="container custom-margin text-center" style=" margin-top: 50px">
-            <p class="text-muted small-text mb-3"></p>
+        <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 custom-margin text-center" style=" margin-top: 50px">
+            <p class="text-slate-500 small-text mb-3"></p>
 
             <a href="<?= base_url("/tamu") ?>" class="text-decoration-none">
-                <div class="card shadow-sm border-2 rounded-4 border-teal p-3 transition hover-effect mx-auto" style="width: 800px;">
-                    <div class="d-flex align-items-center">
+                <div class="rounded-xl border border-slate-200 bg-white shadow-soft shadow-sm border-2 rounded-2xl border-teal p-3 transition hover-effect mx-auto" style="width: 800px;">
+                    <div class="flex items-center">
                         <div class="me-3">
                             <img src="<?= base_url('images/megaphone.png') ?>" alt="Megaphone Icon" width="40" height="40">
                         </div>
                         <div>
-                            <h5 class="mb-0 fw-bold text-teal fs-small">Layanan Pengaduan dan Aspirasi</h5>
+                            <h5 class="mb-0 font-bold text-teal fs-small">Layanan Pengaduan dan Aspirasi</h5>
                         </div>
                     </div>
                 </div>
             </a>
         </div>
 
-        <div class="container custom-margin" style=" padding-top: 215px">
+        <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 custom-margin" style=" padding-top: 215px">
             <a href="<?= base_url("/agenda") ?>" class="text-decoration-none">
-                <div class="card shadow-sm border-2 rounded-4 border-teal p-3 transition hover-effect mx-auto" style="width: 800px;">
-                    <div class="d-flex align-items-center">
+                <div class="rounded-xl border border-slate-200 bg-white shadow-soft shadow-sm border-2 rounded-2xl border-teal p-3 transition hover-effect mx-auto" style="width: 800px;">
+                    <div class="flex items-center">
                         <div class="me-3">
                             <img src="<?= base_url('images/family.png') ?>" alt="Megaphone Icon" width="40" height="40">
                         </div>
                         <div>
-                            <h5 class="mb-0 fw-bold text-teal fs-small">Pendataan Warga Pindah dan Tinggal</h5>
+                            <h5 class="mb-0 font-bold text-teal fs-small">Pendataan Warga Pindah dan Tinggal</h5>
                         </div>
                     </div>
                 </div>
             </a>
         </div>
 
-        <div class="container custom-margin" style=" padding-top: 220px">
+        <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 custom-margin" style=" padding-top: 220px">
             <a href="<?= base_url("/keuangan") ?>" class="text-decoration-none">
-                <div class="card shadow-sm border-2 rounded-4 border-teal p-3 transition hover-effect mx-auto" style="width: 800px;">
-                    <div class="d-flex align-items-center">
+                <div class="rounded-xl border border-slate-200 bg-white shadow-soft shadow-sm border-2 rounded-2xl border-teal p-3 transition hover-effect mx-auto" style="width: 800px;">
+                    <div class="flex items-center">
                         <div class="me-3">
                             <img src="<?= base_url('images/profit.png') ?>" alt="Megaphone Icon" width="40" height="40">
                         </div>
                         <div>
-                            <h5 class="mb-0 fw-bold text-teal fs-small">Rekap Keuangan Iuran Sampah</h5>
+                            <h5 class="mb-0 font-bold text-teal fs-small">Rekap Keuangan Iuran Sampah</h5>
                         </div>
                     </div>
                 </div>
@@ -560,15 +553,15 @@
         </div>
 
 
-        <div class="container custom-margin" style=" padding-top: 220px">
+        <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 custom-margin" style=" padding-top: 220px">
             <a href="<?= base_url("/surat") ?>" class="text-decoration-none">
-                <div class="card shadow-sm border-2 rounded-4 border-teal p-3 transition hover-effect mx-auto" style="width: 800px;">
-                    <div class="d-flex align-items-center">
+                <div class="rounded-xl border border-slate-200 bg-white shadow-soft shadow-sm border-2 rounded-2xl border-teal p-3 transition hover-effect mx-auto" style="width: 800px;">
+                    <div class="flex items-center">
                         <div class="me-3">
                             <img src="<?= base_url('images/writing.png') ?>" alt="Megaphone Icon" width="40" height="40">
                         </div>
                         <div>
-                            <h5 class="mb-0 fw-bold text-teal fs-small">Surat Pengantar RW</h5>
+                            <h5 class="mb-0 font-bold text-teal fs-small">Surat Pengantar RW</h5>
                         </div>
                     </div>
                 </div>

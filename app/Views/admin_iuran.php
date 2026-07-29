@@ -10,9 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
@@ -197,35 +195,12 @@
         .sidebar a:hover {
             background-color: #016b63;
         }
-
-        .dropdown-toggle::after {
-            float: right;
-            margin-top: 6px;
-        }
-
-        .dropdown-menu {
-            background-color: #017a6c;
-        }
-
-        .dropdown-menu a {
-            color: white !important;
-        }
-
-        .dropdown-menu a:hover {
-            background-color: #016b63 !important;
-        }
-
-        .sidebar img.icon {
+.sidebar img.icon {
             width: 20px;
             height: 20px;
             margin-right: 10px;
         }
-
-        .container {
-            margin-top: 50px;
-        }
-
-        table {
+table {
             font-size: 14px;
             /* Set font size for table */
         }
@@ -240,40 +215,7 @@
             font-size: 14px;
             /* Set font size for table header */
         }
-
-        .btn {
-            font-size: 14px;
-            /* Set font size for buttons */
-        }
-
-        .btn-sm {
-            padding: 5px 10px;
-        }
-
-        .table-bordered {
-            border: 1px solid #dee2e6;
-        }
-
-        .table-striped tbody tr:nth-of-type(odd) {
-            background-color: #f9f9f9;
-        }
-
-        .table-success {
-            background-color: #28a745;
-            color: white;
-        }
-
-        .form-control {
-            width: 200px;
-            display: inline-block;
-        }
-
-        .container {
-            margin-top: 40px;
-            margin-left: 200px;
-        }
-
-        .table-wrapper {
+.data-panel {
             background: #fff;
             padding: 25px;
             border-radius: 12px;
@@ -281,27 +223,7 @@
             margin-right: 100px;
             margin-left: 100px;
         }
-
-        .table thead {
-            background-color: #d0ebe6;
-            color: #000;
-        }
-
-        .btn-add {
-            margin-bottom: 20px;
-        }
-
-        .btn-edit {
-            background-color: #007bff;
-            color: #fff;
-        }
-
-        .btn-delete {
-            background-color: #dc3545;
-            color: #fff;
-        }
-
-        .pagination {
+.pagination {
             justify-content: center;
         }
     </style>
@@ -317,14 +239,15 @@
             /* Changed to Poppins */
         }
     </style>
+    <?= view('partials/tailwind_head') ?>
 </head>
 
 <body>
 
 
     <?= view('partials/public_navbar', ['activePage' => '']) ?>
-<div class="d-flex">
-        <div class="sidebar col-3 col-md-2">
+<div class="flex">
+        <div class="sidebar col-span-3 md:col-span-2">
             <h5 class="text-center mb-5"></h5>
             <a href="/admin"> <img class="icon" src="https://img.icons8.com/ios-filled/50/ffffff/dashboard.png" /> Dashboard</a>
             <a href="/admin_data"><img class="icon" src="https://img.icons8.com/ios-filled/50/ffffff/groups.png" /> Pendataan Warga</a>
@@ -335,19 +258,19 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="table-wrapper">
-            <h4 class="fw-bold mb-4">Data Iuran Sampah Bulanan</h4>
+    <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="data-panel">
+            <h4 class="font-bold mb-4">Data Iuran Sampah Bulanan</h4>
 
-            <div class="table-responsive">
+            <div class="w-full overflow-x-auto">
                 <div class="mb-3">
-                    <a href="/tambah_iuran" class="btn btn-success">Tambah Iuran</a>
+                    <a href="/tambah_iuran" class="inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold leading-none shadow-sm transition hover:-translate-y-0.5 focus:outline-none focus:ring-4 disabled:cursor-not-allowed disabled:opacity-50 bg-emerald-600 text-white hover:bg-emerald-700 focus:ring-emerald-200">Tambah Iuran</a>
                 </div>
 
-                <div class="mb-3 row">
-                    <div class="col-md-4 mb-2">
+                <div class="mb-3 grid gap-4 md:grid-cols-12">
+                    <div class="md:col-span-4 mb-2">
                         <label for="filterMonth">Filter Bulan:</label>
-                        <select id="filterMonth" class="form-control" onchange="filterData()">
+                        <select id="filterMonth" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" onchange="filterData()">
                             <option value="">Semua Bulan</option>
                             <option value="01">Januari</option>
                             <option value="02">Februari</option>
@@ -363,14 +286,14 @@
                             <option value="12">Desember</option>
                         </select>
                     </div>
-                    <div class="col-md-4 mb-2">
+                    <div class="md:col-span-4 mb-2">
                         <label for="filterYear">Filter Tahun:</label>
-                        <input type="number" id="filterYear" class="form-control" placeholder="Contoh: 2025" onchange="filterData()">
+                        <input type="number" id="filterYear" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" placeholder="Contoh: 2025" onchange="filterData()">
                     </div>
                 </div>
 
-                <table class="table table-bordered table-striped">
-                    <thead class="table-success text-center">
+                <table class="w-full min-w-max border-collapse text-sm [&_td]:border [&_td]:border-slate-200 [&_td]:px-3 [&_td]:py-2 [&_td]:align-middle [&_th]:border [&_th]:border-slate-200 [&_th]:px-3 [&_th]:py-2 [&_th]:align-middle border border-slate-200 [&_tbody_tr:nth-child(odd)]:bg-slate-50">
+                    <thead class="bg-emerald-50 text-rw-ink text-center">
                         <tr>
                             <th>ID</th>
                             <th>Bulan</th>
@@ -389,9 +312,9 @@
                                 <td>Rp <?= number_format($row['total_pemasukan'], 0, ',', '.'); ?></td>
                                 <td><?= $row['keterangan']; ?></td>
                                 <td class="text-center">
-                                    <a href="/edit_iuran/<?= $row['id']; ?>" class="btn btn-sm btn-primary">Edit</a>
+                                    <a href="/edit_iuran/<?= $row['id']; ?>" class="inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold leading-none shadow-sm transition hover:-translate-y-0.5 focus:outline-none focus:ring-4 disabled:cursor-not-allowed disabled:opacity-50 min-h-8 rounded-lg px-3 py-1.5 text-xs bg-rw-green text-white hover:bg-rw-teal focus:ring-rw-green/20">Edit</a>
                                     <form action="/hapus_iuran/<?= $row['id']; ?>" method="post" style="display:inline;">
-                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus?')">Hapus</button>
+                                        <button type="submit" class="inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold leading-none shadow-sm transition hover:-translate-y-0.5 focus:outline-none focus:ring-4 disabled:cursor-not-allowed disabled:opacity-50 min-h-8 rounded-lg px-3 py-1.5 text-xs bg-red-600 text-white hover:bg-red-700 focus:ring-red-200" onclick="return confirm('Yakin ingin menghapus?')">Hapus</button>
                                     </form>
                                 </td>
                             </tr>
@@ -399,10 +322,10 @@
                     </tbody>
                 </table>
 
-                <div class="d-flex justify-content-between align-items-center mt-3">
-                    <button id="prevPage" class="btn btn-outline-primary btn-sm">Previous</button>
+                <div class="flex justify-between items-center mt-3">
+                    <button id="prevPage" class="inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold leading-none shadow-sm transition hover:-translate-y-0.5 focus:outline-none focus:ring-4 disabled:cursor-not-allowed disabled:opacity-50 border border-rw-green bg-white text-rw-green hover:bg-rw-green hover:text-white focus:ring-rw-green/20 min-h-8 rounded-lg px-3 py-1.5 text-xs">Previous</button>
                     <span id="pageInfo" class="mx-2">Page 1</span>
-                    <button id="nextPage" class="btn btn-outline-primary btn-sm">Next</button>
+                    <button id="nextPage" class="inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold leading-none shadow-sm transition hover:-translate-y-0.5 focus:outline-none focus:ring-4 disabled:cursor-not-allowed disabled:opacity-50 border border-rw-green bg-white text-rw-green hover:bg-rw-green hover:text-white focus:ring-rw-green/20 min-h-8 rounded-lg px-3 py-1.5 text-xs">Next</button>
                 </div>
             </div>
         </div>

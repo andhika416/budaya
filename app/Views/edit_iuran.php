@@ -10,9 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
@@ -197,41 +195,12 @@
         .sidebar a:hover {
             background-color: #016b63;
         }
-
-        .dropdown-toggle::after {
-            float: right;
-            margin-top: 6px;
-        }
-
-        .dropdown-menu {
-            background-color: #017a6c;
-        }
-
-        .dropdown-menu a {
-            color: white !important;
-        }
-
-        .dropdown-menu a:hover {
-            background-color: #016b63 !important;
-        }
-
-        .sidebar img.icon {
+.sidebar img.icon {
             width: 20px;
             height: 20px;
             margin-right: 10px;
         }
-
-        .container {
-            margin-top: 50px;
-        }
-
-        .table-responsive {
-            margin-left: 250px;
-            /* Adjust left margin for table */
-
-        }
-
-        table {
+table {
             font-size: 14px;
             /* Set font size for table */
         }
@@ -246,34 +215,7 @@
             font-size: 14px;
             /* Set font size for table header */
         }
-
-        .btn {
-            font-size: 14px;
-            /* Set font size for buttons */
-        }
-
-        .btn-sm {
-            padding: 5px 10px;
-        }
-
-        .table-bordered {
-            border: 1px solid #dee2e6;
-        }
-
-        .table-striped tbody tr:nth-of-type(odd) {
-            background-color: #f9f9f9;
-        }
-
-        .table-success {
-            background-color: #28a745;
-            color: white;
-        }
-
-        .form-control {
-            width: 200px;
-            display: inline-block;
-        }
-    </style>
+</style>
 
     </style>
 
@@ -286,46 +228,47 @@
             /* Changed to Poppins */
         }
     </style>
+    <?= view('partials/tailwind_head') ?>
 </head>
 
 <body>
 
 
     <?= view('partials/public_navbar', ['activePage' => '']) ?>
-<div class="d-flex">
-    <div class="sidebar col-3 col-md-2">
+<div class="flex">
+    <div class="sidebar col-span-3 md:col-span-2">
         <h5 class="text-center mb-5"></h5>
         <a href="/admin"> <img class="icon" src="https://img.icons8.com/ios-filled/50/ffffff/dashboard.png" /> Dashboard</a>
         <a href="/admin_data"><img class="icon" src="https://img.icons8.com/ios-filled/50/ffffff/groups.png" /> Pendataan Warga</a>
         <a href=""><img class="icon" src="https://img.icons8.com/ios-filled/50/ffffff/document--v1.png" /> Surat Keterangan RT/RW</a>
         <a href="/admin_iuran"><img class="icon" src="https://img.icons8.com/ios-filled/50/ffffff/money.png" /> Rekap Iuran Sampah</a>
         <a href="#"><img class="icon" src="https://img.icons8.com/ios-filled/50/ffffff/error.png" /> Laporan Warga</a>
-        <a id="dropdownLembaga" class="dropdown-toggle" href="#" role="button">
+        <a id="dropdownLembaga" class="inline-flex items-center gap-2" href="#" role="button">
             <img class="icon" src="https://img.icons8.com/ios-filled/50/ffffff/organization.png" /> Lembaga
         </a>
-        <ul id="menuLembaga" class="dropdown-menu border-0 shadow" style="display: none;">
+        <ul id="menuLembaga" class="mt-2 rounded-xl bg-rw-green/95 p-2 shadow-soft border-0 shadow" style="display: none;">
             <li>
-                <a class="dropdown-item" href="#"><img class="icon" src="https://img.icons8.com/ios-filled/24/ffffff/administrator-male.png" /> Perangkat RT/RW</a>
+                <a class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-white hover:bg-white/10" href="#"><img class="icon" src="https://img.icons8.com/ios-filled/24/ffffff/administrator-male.png" /> Perangkat RT/RW</a>
             </li>
             <li>
-                <a class="dropdown-item" href="#"><img class="icon" src="https://img.icons8.com/ios-filled/24/ffffff/teamwork.png" /> Karang Taruna</a>
+                <a class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-white hover:bg-white/10" href="#"><img class="icon" src="https://img.icons8.com/ios-filled/24/ffffff/teamwork.png" /> Karang Taruna</a>
             </li>
         </ul>
     </div>
 </div>
 
-<div class="container mt-5">
+<div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 mt-5">
     <div class="content">
         <h1>Edit Iuran Sampah Bulanan</h1>
     </div>
     <!-- Modal Body -->
-    <div class="modal-body">
-        <div class="form-container bg-light rounded p-4">
+    <div class="rounded-2xl bg-white p-5 shadow-soft">
+        <div class="form-container bg-slate-100 rounded p-4">
             <!-- Form untuk menambah warga -->
             <form action="/edit_iuran/<?= $iuran_sampah['id'] ?>" method="POST">
                 <div class="mb-3">
-                    <label for="bulan" class="form-label">Bulan</label>
-                    <select id="bulan" name="bulan" class="form-control" required>
+                    <label for="bulan" class="mb-1.5 block text-sm font-medium text-slate-700">Bulan</label>
+                    <select id="bulan" name="bulan" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" required>
                         <option value="">-- Pilih Bulan --</option>
                         <?php
                         $bulanList = [
@@ -351,22 +294,22 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="tahun" class="form-label">Tahun</label>
-                    <input type="number" id="tahun" name="tahun" class="form-control" value="<?= $iuran_sampah['tahun'] ?>" required>
+                    <label for="tahun" class="mb-1.5 block text-sm font-medium text-slate-700">Tahun</label>
+                    <input type="number" id="tahun" name="tahun" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" value="<?= $iuran_sampah['tahun'] ?>" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="total" class="form-label">Total Pemasukan</label>
-                    <input type="number" id="total" name="total" class="form-control" value="<?= $iuran_sampah['total_pemasukan'] ?>" required>
+                    <label for="total" class="mb-1.5 block text-sm font-medium text-slate-700">Total Pemasukan</label>
+                    <input type="number" id="total" name="total" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" value="<?= $iuran_sampah['total_pemasukan'] ?>" required>
                 </div>
 
                 <div class="mb-3">
-                    <label for="keterangan" class="form-label">Keterangan</label>
-                    <textarea id="keterangan" name="keterangan" class="form-control" rows="3" required><?= $iuran_sampah['keterangan'] ?></textarea>
+                    <label for="keterangan" class="mb-1.5 block text-sm font-medium text-slate-700">Keterangan</label>
+                    <textarea id="keterangan" name="keterangan" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" rows="3" required><?= $iuran_sampah['keterangan'] ?></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-success">Simpan</button>
-                <a href="/admin_iuran" class="btn btn-secondary">Batal</a>
+                <button type="submit" class="inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold leading-none shadow-sm transition hover:-translate-y-0.5 focus:outline-none focus:ring-4 disabled:cursor-not-allowed disabled:opacity-50 bg-emerald-600 text-white hover:bg-emerald-700 focus:ring-emerald-200">Simpan</button>
+                <a href="/admin_iuran" class="inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold leading-none shadow-sm transition hover:-translate-y-0.5 focus:outline-none focus:ring-4 disabled:cursor-not-allowed disabled:opacity-50 bg-slate-600 text-white hover:bg-slate-700 focus:ring-slate-300">Batal</a>
             </form>
 
         </div>
@@ -379,11 +322,7 @@
                 padding: 20px;
                 margin-left: 250px;
             }
-
-            .form-label {
-                font-weight: 500;
-            }
-        </style>
+</style>
 
     </div>
 

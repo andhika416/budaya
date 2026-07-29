@@ -10,9 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
@@ -314,20 +312,7 @@
             font-weight: bold;
             font-size: 25px;
         }
-
-        .container {
-            width: 1200px;
-            margin: 50px auto;
-            padding: 20px;
-            border: 2px solid #0a3323;
-            border-radius: 10px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 50px;
-            height: 1000px;
-        }
-
-        h1 {
+h1 {
             text-align: center;
             color: #0a3323;
             font-size: 17px;
@@ -338,18 +323,7 @@
             color: #FFA500;
             font-size: 15px;
         }
-
-        .table-hover {
-            margin-top: 200px;
-            margin-left: 20px;
-            margin-right: 100px;
-            max-width: 900px;
-            padding-left: 20px;
-            padding-top: 20px;
-
-        }
-
-        h2 {
+h2 {
             text-align: center;
             margin: 20px 0;
             margin-top: 50px;
@@ -367,13 +341,8 @@
             /* Changed to Poppins */
         }
     </style>
+    <?= view('partials/tailwind_head') ?>
 </head>
-
-<body>
-    <!-- Your body content goes here -->
-</body>
-
-</html>
 
 <body>
 
@@ -381,17 +350,17 @@
 
 <main>
     <h2>Pendataan Kelahiran</h2>
-    <div class="container mt-4">
+    <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 mt-4">
 
         <!-- Filter Tanggal dan Status -->
-        <div class="row mb-3">
-            <div class="col-md-4">
+        <div class="grid gap-4 md:grid-cols-12 mb-3">
+            <div class="md:col-span-4">
                 <label for="filterTanggal">Filter Tanggal:</label>
-                <input type="text" id="filterTanggal" class="form-control" placeholder="YYYY-MM-DD">
+                <input type="text" id="filterTanggal" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15" placeholder="YYYY-MM-DD">
             </div>
-            <div class="col-md-4">
+            <div class="md:col-span-4">
                 <label for="filterStatus">Filter Status:</label>
-                <select id="filterStatus" class="form-control">
+                <select id="filterStatus" class="block min-h-10 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-rw-teal focus:ring-4 focus:ring-rw-teal/15">
                     <option value="">Semua</option>
                     <option value="Pindah">Pindah</option>
                     <option value="Tinggal">Tinggal</option>
@@ -400,9 +369,9 @@
                 </select>
             </div>
         </div>
-        <div class="table-responsive">
-            <table id="tableWarga" class="table table-striped table-bordered">
-                <thead class="table-dark">
+        <div class="w-full overflow-x-auto">
+            <table id="tableWarga" class="w-full min-w-max border-collapse text-sm [&_td]:border [&_td]:border-slate-200 [&_td]:px-3 [&_td]:py-2 [&_td]:align-middle [&_th]:border [&_th]:border-slate-200 [&_th]:px-3 [&_th]:py-2 [&_th]:align-middle [&_tbody_tr:nth-child(odd)]:bg-slate-50 border border-slate-200">
+                <thead class="bg-rw-green text-white">
                     <tr>
                         <th>No</th>
                         <th>Nama Bayi</th>
@@ -543,9 +512,10 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const dropdownToggle = document.querySelector('.dropdown-toggle');
-        const dropdownMenu = document.querySelector('.dropdown');
+        const dropdownToggle = document.querySelector('[data-dropdown-toggle]');
+        const dropdownMenu = document.querySelector('[data-dropdown-menu]');
 
+        if (dropdownToggle && dropdownMenu) {
         dropdownToggle.addEventListener('click', function(event) {
             event.preventDefault(); // Mencegah navigasi
             dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';

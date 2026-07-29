@@ -9,10 +9,7 @@
     <link rel="shortcut icon" type="image/png" href="/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Bootstrap CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- STYLES -->
@@ -199,19 +196,7 @@
             font-weight: bold;
             font-size: 25px;
         }
-
-        .container {
-            width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            border: 2px solid #0a3323;
-            border-radius: 10px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 100px;
-        }
-
-        h1 {
+h1 {
             text-align: center;
             color: #0a3323;
             font-size: 17px;
@@ -263,73 +248,13 @@
             border: 1px solid #0a3323;
             color: #0a3323;
         }
-
-        .card-header {
-            font-size: 15px;
-        }
-
-        .container {
-            max-width: 800px;
-        }
-
-        .card {
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-header {
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            background-color: #007bff;
-            color: white;
-        }
-
-        .form-label {
-            font-weight: 600;
-        }
-
-        .form-control,
-        .form-select,
-        .form-control:focus {
-            border-radius: 8px;
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-            padding: 10px 20px;
-            border-radius: 50px;
-            transition: background-color 0.3s;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
-        }
-
-        .card-body {
-            padding: 30px;
-        }
-
-        .form-control,
-        .form-select,
         textarea {
             border: 1px solid #ddd;
         }
-
-        .form-control:focus {
-            border-color: #007bff;
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-        }
-
-        .mb-3 {
+.mb-3 {
             margin-bottom: 1.5rem;
         }
-
-        .form-control-file {
-            padding: 10px;
-        }
-    </style>
+</style>
 
     </style>
 
@@ -340,28 +265,14 @@
             /* Changed to Poppins */
         }
     </style>
+    <?= view('partials/tailwind_head') ?>
 </head>
-
-<body>
-    <!-- Your body content goes here -->
-</body>
-
-</html>
 
 <body>
 
     <!-- HEADER: MENU + HEROE SECTION -->
     <style>
-        .container {
-            max-width: 800px;
-            margin: 30px auto;
-            background: #fff;
-            padding: 20px 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
+h2 {
             text-align: center;
             color: #2d3436;
             font-size: 20px;
@@ -425,7 +336,7 @@
             background-color: #74b9ff;
         }
     </style>
-    </head>
+</head>
 
     <body>
         <?php if (session()->getFlashdata('success')): ?>
@@ -435,7 +346,7 @@
         <?php endif; ?>
 
 
-        <div class="container">
+        <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
             <!-- <h2>QnA & Pengaduan Warga</h2>
 
             <div class="qna-item">
