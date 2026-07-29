@@ -1,48 +1,6 @@
 <?php $activePage = $activePage ?? ''; ?>
 
 <style>
-    .btn-success,
-    .bg-success {
-        background-color: #0a3323 !important;
-        border-color: #0a3323 !important;
-    }
-
-    .btn-outline-success {
-        color: #0a3323 !important;
-        border-color: #0a3323 !important;
-    }
-
-    .btn-outline-success:hover,
-    .btn-outline-success:focus {
-        background-color: #0a3323 !important;
-        border-color: #0a3323 !important;
-        color: #fff !important;
-    }
-
-    .text-success {
-        color: #0a3323 !important;
-    }
-
-    .border-success {
-        border-color: #0a3323 !important;
-    }
-
-    .table-success,
-    .table-success > th,
-    .table-success > td {
-        background-color: rgba(10, 51, 35, 0.12) !important;
-    }
-
-    .alert-success {
-        color: #0a3323 !important;
-        background-color: rgba(10, 51, 35, 0.12) !important;
-        border-color: rgba(10, 51, 35, 0.24) !important;
-    }
-
-    .badge.bg-success {
-        background-color: #0a3323 !important;
-    }
-
     .site-navbar {
         position: sticky !important;
         top: 0 !important;
@@ -62,8 +20,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 24px;
-        padding: 10px 28px;
+        gap: 20px;
+        padding: 8px 26px;
         background: rgba(10, 51, 35, 0.88);
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         backdrop-filter: blur(16px);
@@ -74,16 +32,16 @@
     .site-brand {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 10px;
         min-width: 0;
         text-decoration: none;
     }
 
     .site-brand__logo {
-        width: 52px;
-        height: 52px;
+        width: 46px;
+        height: 46px;
         object-fit: contain;
-        border-radius: 14px;
+        border-radius: 12px;
         padding: 4px;
         flex-shrink: 0;
     }
@@ -97,7 +55,7 @@
 
     .site-brand__title {
         color: #fff;
-        font-size: 0.96rem;
+        font-size: 0.88rem;
         font-weight: 700;
         line-height: 1.05;
         text-transform: uppercase;
@@ -105,7 +63,7 @@
 
     .site-brand__subtitle {
         color: rgba(255, 255, 255, 0.82);
-        font-size: 0.72rem;
+        font-size: 0.66rem;
         font-weight: 500;
         line-height: 1.1;
     }
@@ -113,7 +71,7 @@
     .site-navbar__menu {
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 6px;
     }
 
     .site-navbar__link,
@@ -123,9 +81,9 @@
         background: transparent;
         color: #f6fffc;
         font: inherit;
-        font-size: 0.95rem;
+        font-size: 0.86rem;
         font-weight: 500;
-        padding: 10px 14px;
+        padding: 8px 12px;
         border-radius: 10px;
         transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
         cursor: pointer;
@@ -166,12 +124,12 @@
     .site-navbar__dropdown-toggle i,
     .site-navbar__account-toggle .fa-angle-down {
         margin-left: 8px;
-        font-size: 0.78rem;
+        font-size: 0.72rem;
     }
 
     .site-navbar__account-toggle .fa-circle-user {
         margin-left: 0;
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .site-navbar__dropdown-menu {
@@ -202,10 +160,10 @@
 
     .site-navbar__dropdown-item {
         display: block;
-        padding: 12px 14px;
+        padding: 10px 12px;
         color: #16302b;
         border-radius: 12px;
-        font-size: 0.96rem;
+        font-size: 0.86rem;
         text-decoration: none;
     }
 
@@ -278,15 +236,15 @@
 
     @media (max-width: 640px) {
         .site-navbar__inner {
-            padding: 10px 14px;
+            padding: 8px 14px;
         }
 
         .site-brand__title {
-            font-size: 0.88rem;
+            font-size: 0.82rem;
         }
 
         .site-brand__subtitle {
-            font-size: 0.68rem;
+            font-size: 0.62rem;
         }
     }
 </style>
